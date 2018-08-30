@@ -1,0 +1,10 @@
+# Magic Squares
+
+This script:
+
+## Allows the user to enter N through standard input, where N is any positive odd integer.
+## Checks that N is valid and prompt the user to enter another value for N if it is not.
+## Calculates a valid magic square for that value of N.
+## Prints out the magic square, legibly.
+## Verifies that the magic square is indeed valid.
+## Prints “Correct!” if the verification step passes.
