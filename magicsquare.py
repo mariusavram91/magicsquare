@@ -56,10 +56,7 @@ def create_magic_square(n):
         x = x - 1
         y = y + 1
 
-    if is_magic_square(magic_square):
-        print("Correct!")
-        print()
-    else:
+    if not is_magic_square(magic_square):
         create_magic_square(n)
 
     return magic_square
@@ -104,12 +101,10 @@ def magic_square():
     n = get_square_dimension()
     magic_square = create_magic_square(n)
     display_magic_square(magic_square)
+    if is_magic_square(magic_square):
+        print("Correct!\n")
 
     return
-
-
-# Start the magic
-magic_square()
 
 
 class MagicSquareValidityTest(unittest.TestCase):
@@ -137,4 +132,7 @@ class MagicSquareValidityTest(unittest.TestCase):
         self.assertTrue(is_magic_square(magic_square))
 
 if __name__ == '__main__':
+    # Start the magic
+    magic_square()
+
     unittest.main()
