@@ -1,6 +1,14 @@
 import random
 import unittest
 '''
+Script that builds Magic Squares with dimension n*n, where n is an odd positive
+integer.
+
+A magic square is a square grid of distinct numbers such that each row and
+column add up to the same number. Further, the two diagonals (from corner to
+corner) also add up to that number.
+
+This script starts with 1 at a random position in the matrix.
 '''
 
 
@@ -73,14 +81,17 @@ def is_magic_square(magic_square):
 
     flat_magic_square = [number for row in magic_square for number in row]
 
+    # Check if all the elements in the matrix are integers
     if not all(isinstance(element, int) for element in flat_magic_square):
         return False
+    # Check if there are duplicates in the matrix
     if len(set(flat_magic_square)) != len(flat_magic_square):
         return False
 
     sums = []
     sums.extend([sum(row) for row in magic_square])
     sums.extend([sum(col) for col in zip(*magic_square)])
+    # Sums for the diagonals
     sums.append(sum(magic_square[i][i] for i in range(size)))
     sums.append(sum(magic_square[i][size-i-1] for i in range(size)))
 
@@ -96,6 +107,8 @@ def magic_square():
 
     return
 
+
+# Start the magic
 magic_square()
 
 

@@ -1,10 +1,77 @@
 # Magic Squares
 
+Script that builds Magic Squares with dimension n*n, where n is an odd positive
+integer.
+
+A magic square is a square grid of distinct numbers such that each row and
+column add up to the same number. Further, the two diagonals (from corner to
+corner) also add up to that number.
+
 This script:
 
-## Allows the user to enter N through standard input, where N is any positive odd integer.
-## Checks that N is valid and prompt the user to enter another value for N if it is not.
-## Calculates a valid magic square for that value of N.
-## Prints out the magic square, legibly.
-## Verifies that the magic square is indeed valid.
-## Prints “Correct!” if the verification step passes.
+- Allows the user to enter N through standard input, where N is any positive odd integer.
+- Checks that N is valid and prompt the user to enter another value for N if it is not.
+- Calculates a valid magic square for that value of N.
+- Prints out the magic square, legibly.
+- Verifies that the magic square is indeed valid.
+- Prints “Correct!” if the verification step passes.
+- * Also runs the tests for some of the functions
+
+## Environment
+
+If you don't have Python you can follow the instructions from https://www.python.org/downloads/.
+
+Make sure to install Python 3.x
+
+First, create an environment.
+```
+$ virtualenv env
+```
+If you have both python 2.x and 3.x versions, use the below command.
+```
+$ virtualenv --python=/usr/bin/python3 env
+```
+You can activate it.
+```
+$ source ./env/bin/activate
+```
+Verify the version of python with the below command.
+```
+$ python
+Python 3.5.2 (default, Nov 23 2017, 16:37:01)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+When not using you can deactivate it.
+```
+$ deactivate
+```
+
+## Run the script
+
+Python 3 is a requirement.
+
+```
+$ python magicsquare.py
+```
+
+Behold the magic!
+
+You should get an output similar to this:
+```
+
+Please enter any positive odd integer: 3
+
+Magic square is (dimension n=3):
+7       3       2
+5       1       6
+9       8       4
+Correct!
+
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+```
