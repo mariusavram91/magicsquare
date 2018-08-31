@@ -1,3 +1,4 @@
+import random
 import unittest
 '''
 '''
@@ -17,7 +18,41 @@ def get_square_dimension():
 
 
 def create_magic_square(n):
-    magic_square = [[0] * n] * n
+    magic_square = [[0] * n for i in range(n)]
+
+    number = 1
+    x = random.randint(0, n - 1)
+    y = random.randint(0, n - 1)
+
+    while number <= (n * n):
+        if x < 0 and y == n:
+            x = 0
+            y = n - 2
+        else:
+            if x < 0:
+                x = n - 1
+            if y == n:
+                y = 0
+
+        try:
+            if magic_square[x][y]:
+                x = x + 1
+                y = y - 2
+                continue
+            else:
+                magic_square[x][y] = number
+                number = number + 1
+        except IndexError:
+            pass
+
+        x = x - 1
+        y = y + 1
+
+    if is_magic_square(magic_square):
+        print("Correct!")
+        print()
+    else:
+        create_magic_square(n)
 
     return magic_square
 
@@ -58,10 +93,6 @@ def magic_square():
     n = get_square_dimension()
     magic_square = create_magic_square(n)
     display_magic_square(magic_square)
-
-    if is_magic_square(magic_square):
-        print("Correct!")
-    print()
 
     return
 
